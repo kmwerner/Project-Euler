@@ -1,0 +1,91 @@
+#Project Euler Entries copied from JuPyter Notebook, each entry copied below for reference.
+
+#Project Euler 1
+#11-17-2015
+sum = int(0)
+for i in range(1000):
+    if (i)%3 == 0 or (i)%5 == 0:
+        list.append(i)
+        sum += (i)
+print sum
+
+#Project Euler 2
+#11-19-2015
+def fibonacci(n):
+    #returns the n-th number of the fibonacci sequence
+    if n <= 1:
+        return int(1)
+    elif n ==2:
+        return int(2)
+    else:
+        return int(fibonacci(n-1) + fibonacci(n-2))
+n=1
+sum=0
+while fibonacci(n)<=4000000:
+    if fibonacci(n)%2==0:
+        sum = sum + fibonacci(n)
+    n = n+1
+print 'sum is: ' +str(sum)
+
+#Project Euler 3
+#11-19-2015
+#Find largest prime factor of 600851475143
+from math import sqrt
+def primefinder(n):
+    #finds the prime factors of an input number n
+    primes=[]
+    for i in range(2,n,1):
+        while n%i==0:
+            primes.append(i)
+            n=n/i
+    return primes
+print primefinder(20)
+
+#Project Euler 4
+#11-19-2015
+def palindrome(n):
+    if str(n) == str(n)[::-1]:
+        return n
+dromes=[] 
+z=[]
+for x in range(900,999,1):
+    for y in range(900,999,1):
+        z.append(x*y) 
+
+for i in z:
+    if palindrome(i) == i:
+         dromes.append(i)
+print max(dromes)
+
+#Project Euler 5
+#11-19-2015
+
+#Find the smallest number evenly divisible by all numbers less than 20.
+#Identifies and takes the product of all primes <= 20
+
+def mainder(number, divisor):
+    #produce a list of remainders for a given number and a divisor
+    mainderlist = []
+    for i in range(divisor):
+        mainderlist.append(number%(i+1))
+    return mainderlist
+
+
+
+def find_smallest_divisible_by(number):
+    smallest = 1
+    for i in reduced(primefinder(number)):
+        smallest = smallest*i
+        
+    
+def primefinder(n):
+    #finds the prime factors of an input number n
+    primes=[]
+    for i in range(2,n,1):
+        while n%i==0:
+            primes.append(i)
+            n=n/i
+    return primes
+
+print(reduced([1,2,4,5,5]))
+
